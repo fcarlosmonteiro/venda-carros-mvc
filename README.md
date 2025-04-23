@@ -28,24 +28,25 @@ O projeto segue o padrão arquitetural MVC (Model-View-Controller):
 ### Estrutura de Diretórios
 venda-carros-mvc/
 ├── app/
-│ ├── init.py
-│ ├── models/ 
-│ │ └── carro.py
-│ ├── controllers/ 
-│ │ └── carros_controller.py
-│ ├── views/ 
-│ │ └── templates/
-│ │ ├── base.html
-│ │ ├── index.html
-│ │ ├── carros.html
-│ │ ├── novo_carro.html
-│ │ └── editar_carro.html
-│ └── routes.py 
+│   ├── init.py
+│   ├── models/         # Camada Model
+│   │   └── carro.py
+│   ├── controllers/    # Camada Controller
+│   │   └── carros_controller.py
+│   ├── views/          # Camada View
+│   │   └── templates/
+│   │       ├── base.html
+│   │       ├── index.html
+│   │       ├── carros.html
+│   │       ├── novo_carro.html
+│   │       └── editar_carro.html
+│   └── routes.py       # Definição das rotas
 ├── instance/
-│ └── database.db 
-├── migrations/ 
-├── requirements.txt 
-└── run.py 
+│   └── database.db     # Banco de dados SQLite
+├── migrations/         # Migrações do banco
+├── requirements.txt    # Dependências
+└── run.py              # Arquivo de inicialização
+
 
 ### Componentes MVC
 
