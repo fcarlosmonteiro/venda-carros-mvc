@@ -41,12 +41,12 @@ venda-carros-mvc/
 │   │       ├── carros.html
 │   │       ├── novo_carro.html
 │   │       └── editar_carro.html
-│   └── routes.py       # Definição das rotas
+│   └── routes.py       
 ├── instance/
-│   └── database.db     # Banco de dados SQLite
-├── migrations/         # Migrações do banco
-├── requirements.txt    # Dependências
-└── run.py              # Arquivo de inicialização
+│   └── database.db     
+├── migrations/         
+├── requirements.txt    
+└── run.py              
 ```
 
 ### Componentes MVC
