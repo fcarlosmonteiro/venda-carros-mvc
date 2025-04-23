@@ -6,6 +6,7 @@ class Carro(db.Model):
     modelo = db.Column(db.String(50), nullable=False)
     ano = db.Column(db.Integer, nullable=False)
     preco = db.Column(db.Float, nullable=False)
+    quilometragem = db.Column(db.Integer, nullable=False, default=0, server_default='0')
     
     def __repr__(self):
         return f'<Carro {self.marca} {self.modelo}>'
@@ -16,5 +17,6 @@ class Carro(db.Model):
             'marca': self.marca,
             'modelo': self.modelo,
             'ano': self.ano,
-            'preco': self.preco
+            'preco': self.preco,
+            'quilometragem': self.quilometragem
         } 

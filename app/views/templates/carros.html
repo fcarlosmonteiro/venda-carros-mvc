@@ -12,22 +12,10 @@
             <div class="p-6">
                 <h2 class="text-xl font-semibold mb-2">{{ carro.modelo }}</h2>
                 <div class="space-y-2 text-gray-600">
+                    <p><span class="font-medium">Marca:</span> {{ carro.marca }}</p>
                     <p><span class="font-medium">Ano:</span> {{ carro.ano }}</p>
                     <p><span class="font-medium">Preço:</span> R$ {{ "%.2f"|format(carro.preco) }}</p>
                     <p><span class="font-medium">Quilometragem:</span> {{ carro.quilometragem }} km</p>
-                </div>
-                <div class="mt-4 flex space-x-2">
-                    <a href="{{ url_for('main.editar_carro', id=carro.id) }}" 
-                       class="inline-block bg-gray-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-700">
-                        Editar
-                    </a>
-                    <form action="{{ url_for('main.excluir_carro', id=carro.id) }}" method="POST" class="inline">
-                        <button type="submit" 
-                                class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-500"
-                                onclick="return confirm('Tem certeza que deseja excluir este carro?')">
-                            Excluir
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>

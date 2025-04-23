@@ -42,9 +42,9 @@ class CarrosController:
         return render_template('editar_carro.html', carro=carro)
     
     @staticmethod
-    def deletar_carro(id):
+    def excluir_carro(id):
         carro = Carro.query.get_or_404(id)
         db.session.delete(carro)
         db.session.commit()
-        flash('Carro deletado com sucesso!', 'success')
+        flash('Carro excluído com sucesso!', 'success')
         return redirect(url_for('main.listar_carros')) 
