@@ -26,6 +26,7 @@ Criar uma plataforma moderna e intuitiva para apresentação de carros clássico
 O projeto segue o padrão arquitetural MVC (Model-View-Controller):
 
 ### Estrutura de Diretórios
+```
 venda-carros-mvc/
 ├── app/
 │   ├── init.py
@@ -46,7 +47,7 @@ venda-carros-mvc/
 ├── migrations/         # Migrações do banco
 ├── requirements.txt    # Dependências
 └── run.py              # Arquivo de inicialização
-
+```
 
 ### Componentes MVC
 
