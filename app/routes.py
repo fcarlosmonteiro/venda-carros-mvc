@@ -1,9 +1,12 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 from app.controllers.carros_controller import CarrosController
 
 main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
+def index():
+    return render_template('index.html')
+
 @main_bp.route('/carros')
 def listar_carros():
     return CarrosController.listar_carros()

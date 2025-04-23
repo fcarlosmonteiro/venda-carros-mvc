@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Fusca Preto Garage - Carros Antigos{% endblock %}
+
+{% block content %}
+<div class="relative">
+    <!-- Hero Section -->
+    <div class="bg-black rounded-3xl overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Bem-vindo à Fusca Preto Garage
+            </h1>
+            <p class="text-xl text-gray-300 mb-8">
+                Sua fonte de carros clássicos e antiguidades automotivas
+            </p>
+            <a href="{{ url_for('main.listar_carros') }}" 
+               class="inline-block bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                Ver Catálogo
+            </a>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <div class="text-2xl mb-4">🚗</div>
+            <h3 class="text-xl font-semibold mb-2">Carros Clássicos</h3>
+            <p class="text-gray-600">
+                Encontre os melhores carros antigos restaurados e conservados.
+            </p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <div class="text-2xl mb-4">🔧</div>
+            <h3 class="text-xl font-semibold mb-2">Restauração</h3>
+            <p class="text-gray-600">
+                Todos os nossos veículos passam por um rigoroso processo de restauração.
+            </p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+            <div class="text-2xl mb-4">📝</div>
+            <h3 class="text-xl font-semibold mb-2">Documentação</h3>
+            <p class="text-gray-600">
+                Garantimos toda a documentação e procedência dos veículos.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %} 
