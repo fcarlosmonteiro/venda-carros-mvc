@@ -1,0 +1,23 @@
+@startuml VendasCarros
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(admin, "Administrador")
+Person(cliente, "Cliente")
+
+System_Boundary(sistema, "Sistema de Vendas de Carros") {
+    Container(web, "Frontend Web", "HTML + Tailwind", "Interface do usuário")
+    Container(api, "Backend API", "Flask + Python", "Regra de negócio e API")
+    ContainerDb(db, "Database", "SQLite", "Armazena dados dos carros, vendas e usuários")
+}
+
+System_Ext(api_pagamento, "API de Pagamento")
+System_Ext(api_nf, "API de Nota Fiscal")
+
+Rel(admin, web, "Usa via navegador")
+Rel(cliente, web, "Usa via navegador")
+Rel(web, api, "Faz chamadas HTTP")
+Rel(api, db, "Lê e escreve")
+Rel(api, api_pagamento, "Processa pagamentos")
+Rel(api, api_nf, "Emite notas fiscais")
+
+@enduml

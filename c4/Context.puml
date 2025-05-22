@@ -1,0 +1,17 @@
+@startuml VendasCarros
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(admin, "Administrador", "Gerencia o sistema de vendas de carros")
+Person(cliente, "Cliente", "Consulta e compra carros")
+
+System(sistema, "Sistema de Vendas de Carros", "Plataforma web para venda de veículos")
+
+System_Ext(api_pagamento, "API de Pagamento", "Processa pagamentos")
+System_Ext(api_nf, "API de Nota Fiscal", "Emite NF-e")
+
+Rel(admin, sistema, "Usa")
+Rel(cliente, sistema, "Usa")
+Rel(sistema, api_pagamento, "Consulta pagamentos")
+Rel(sistema, api_nf, "Emite notas fiscais")
+
+@enduml

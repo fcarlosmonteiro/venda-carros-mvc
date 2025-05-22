@@ -1,0 +1,31 @@
+@startuml VendasCarros
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+' Definição do contêiner Backend API
+Container(api, "Backend API", "Flask + Python", "Gerencia regras e dados do sistema")
+
+' Componentes do domínio de veículos
+Component(carroController, "CarroController", "Flask Blueprint", "Gerencia requisições relacionadas a veículos")
+Component(carroRepository, "CarroRepository", "Classe Python", "Acesso e persistência dos dados dos veículos")
+
+' Componentes do domínio de vendas
+Component(vendaController, "VendaController", "Flask Blueprint", "Gerencia requisições relacionadas a vendas")
+Component(vendaRepository, "VendaRepository", "Classe Python", "Persistência e consulta de vendas")
+
+' Serviços externos
+Component(pagamentoService, "PagamentoService", "Classe Python", "Integra com API de pagamento")
+Component(notaFiscalService, "NotaFiscalService", "Classe Python", "Integra com API de nota fiscal")
+
+' Relacionamentos do domínio de veículos
+carroController -> carroRepository : Usa
+
+' Relacionamentos do domínio de vendas
+vendaController -> vendaRepository : Usa
+vendaController -> pagamentoService : Processa pagamento
+vendaController -> notaFiscalService : Emite nota fiscal
+
+' Relacionamento backend
+api -> carroController : Encaminha requisições
+api -> vendaController : Encaminha requisições
+
+@enduml

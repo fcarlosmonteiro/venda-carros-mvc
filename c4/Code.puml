@@ -1,0 +1,61 @@
+@startuml VendasCarros
+title Diagrama de Classes - Venda de Carros
+
+' Inclusão de estilo opcional
+skinparam classAttributeIconSize 0
+
+' Entidades
+class Carro {
+  +id: int
+  +marca: str
+  +modelo: str
+  +ano: int
+  +preco: float
+}
+
+class Cliente {
+  +id: int
+  +nome: str
+  +email: str
+}
+
+class Venda {
+  +id: int
+  +carro: Carro
+  +comprador: Cliente
+  +preco: float
+  +status_pagamento: str
+}
+
+' Repositórios
+class CarroRepository {
+  +adicionar(carro: Carro)
+  +remover(id: int)
+  +listar(): List[Carro]
+}
+
+class VendaRepository {
+  +registrar(venda: Venda)
+  +listar(): List[Venda]
+  +buscar(id: int): Venda
+}
+
+' Serviços
+class PagamentoService {
+  +processarPagamento(venda: Venda)
+}
+
+class NotaFiscalService {
+  +emitirNota(venda: Venda)
+}
+
+' Relacionamentos
+CarroRepository --> Carro
+VendaRepository --> Venda
+Venda --> Carro
+Venda --> Cliente
+
+PagamentoService --> Venda
+NotaFiscalService --> Venda
+
+@enduml
